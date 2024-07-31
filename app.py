@@ -8,7 +8,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 st.set_page_config(page_title="Diagnóstico de español", page_icon="🇪🇸")
 
 # Título de la aplicación
-st.title("Diagnóstico de competencia lingüística en español")
+st.title("Diagnóstico ")
 
 # Obtener la API key de los secrets de Streamlit
 api_key = st.secrets["api_key"]
