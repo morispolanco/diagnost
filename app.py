@@ -1,6 +1,29 @@
 import streamlit as st
 import requests
 import json
+import os
+from apscheduler.schedulers.blocking import BlockingScheduler
+
+def keep_alive():
+    # Código para mantener la app activa
+    print("App still alive!")
+
+sched = BlockingScheduler()
+
+@sched.scheduled_job('interval', minutes=30)
+def timed_job():
+    keep_alive()
+
+sched.start()
+
+# Configuración de la página
+st.set_page_config(page_title="Diagnóstico de español", page_icon="🇪🇸")
+
+# Título de la aplicación
+st.title("Asistente de Lengua Española")
+
+# Obtener la API key de los secrets de Streamlit
+api_key = st.secrets["api_key"]
 
 def evaluar_texto(api_key, texto):
     url = "https://proxy.tune.app/chat/completions"
