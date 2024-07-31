@@ -52,7 +52,6 @@ def evaluar_texto(api_key, texto):
 def main():
     st.title("Aplicación de Evaluación de Texto")
 
-    api_key = st.text_input("Ingrese su clave de API:", type="password")
     texto_a_evaluar = st.text_area("Ingrese el texto a evaluar:", height=200)
 
     if st.button("Evaluar Texto"):
